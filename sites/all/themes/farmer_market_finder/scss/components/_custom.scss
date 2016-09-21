@@ -1,0 +1,108 @@
+// Custom Styles.
+// -----------------------------------------------------------------------------
+
+.panopoly-image-full {
+  margin: 0;
+  width: 100%;
+  height: 300px !important;
+  top: 0;
+  left: 0;
+  position: absolute;
+  overflow: hidden;
+  z-index: -900;
+  margin-bottom: 1em;
+}
+
+.hero-front img{
+  height: auto !important;
+}
+
+.home-search-widget {
+  position:absolute;
+  margin-top:150px;
+  text-align:center;
+  height: auto;
+}
+
+.pane-vuuid-96eb69b5-3bb5-43b9-9c18-84cec350b489, #panels-ipe-paneid-14, #panels-ipe-paneid-77 {
+  //margin-left: -12.5%;
+  //width: 125%;
+}
+
+.title-pane {
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+  position: relative;
+  height: 150px;
+  padding-top: 150px;
+  z-index: 100;
+}
+
+.navbar {
+  position: absolute;
+  z-index: 800;
+  min-height: 100px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.navbar-default {
+  width: 80%;
+  background-color: transparent;
+  border: none;
+}
+
+
+#page-header {
+  margin-top: 300px;
+  position: absolute;
+
+}
+
+#logo {
+  height: 300%;
+}
+
+#messages {
+  margin-top: 300px;
+  z-index: 700;
+  position: absolute;
+  width: 80%;
+}
+
+
+.breadcrumb {
+  display: none;
+}
+
+.form-item-zip-field {
+  color: #fff;
+  float: left;
+  padding-right:5px;
+  label {
+    height: 0;
+    margin: 0;
+    display: none;
+  }
+}
+
+#fmf-search-form-zipcode-form {
+  margin: 1em;
+  submit {
+    margin-left: 5px;
+  }
+}
+
+.container {
+  width: 100%;
+}
+
+.radix-layouts-header {
+  height: 300px;
+  margin-bottom: 1em;
+}
+
+.pane-node-title {
+  margin-bottom: 200px;
+}

@@ -1,0 +1,6 @@
+name = FMF Cron
+description = Manage cron jobs for FMF
+package = FMF
+
+core = 7.x
+php = 5.2

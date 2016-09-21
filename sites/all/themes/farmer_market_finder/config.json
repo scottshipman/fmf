@@ -1,0 +1,36 @@
+{
+  "name": "farmer_market_finder",
+  "description": "A theme based on Radix.",
+  "browserSyncProxy" : "http://fmf.dev",
+  "bowerDir": "./bower_components",
+  "css": {
+    "file" : "farmer_market_finder.style.scss",
+    "src": [
+      "scss/**/*.scss"
+    ],
+    "dest": "assets/css",
+    "includePaths": [
+      "./bower_components/bootstrap-sass/assets/stylesheets",
+      "./bower_components/font-awesome/scss"
+    ]
+  },
+  "js": {
+    "file" : "farmer_market_finder.script.js",
+    "src": [
+      "assets/js/**/*.js"
+    ],
+    "dest": "assets/js"
+  },
+  "images": {
+    "src": [
+      "assets/images/**/*"
+    ],
+    "dest": "assets/images/"
+  },
+  "fonts": {
+    "src": [
+      "./bower_components/font-awesome/fonts/**.*"
+    ],
+    "dest": "./assets/fonts/"
+  }
+}

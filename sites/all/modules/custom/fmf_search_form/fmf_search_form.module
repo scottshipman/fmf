@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * fmf_search_form module.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function fmf_search_form_block_info() {
+    $blocks['zipcode_search'] = array(
+        'info' => t('Zip Code Search'),
+        'cache' => DRUPAL_NO_CACHE,
+    );
+    return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function fmf_search_form_block_view($delta = '') {
+    $block = array();
+    switch ($delta) {
+        case 'zipcode_search':
+            $block['subject'] = t('Zip Code Search');
+            $block['content'] = drupal_get_form('fmf_search_form_zipcode_form');
+            break;
+    }
+    return $block;
+}
+
+
+function fmf_search_form_zipcode_form($form, &$form_state) {
+
+    $form['zip_field'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Enter a U.S. Zip Code'),
+        '#default_value' => "",
+        '#size' => 10,
+        '#attributes' => array(
+            'placeholder' => "Zip Code",
+        ),
+        '#maxlength' => 10,
+        '#required' => FALSE,
+    );
+
+
+    $form['submit_button'] = array(
+        '#type' => 'submit',
+        '#value' => t('Search'),
+    );
+
+    return $form;
+}
+
+function fmf_search_form_zipcode_form_validate($form, &$form_state) {
+//    if(preg_match("/^([0-9]{5})(-[0-9]{4})?$/i",$form_state['values']['zip_field'])){
+//        form_set_error('title', t('Please use a 5 digit U.S. Zip Code.'));
+//    }
+}
+
+function fmf_search_form_zipcode_form_submit($form, &$form_state) {
+    $url = "/markets/zip/" . $form_state['values']['zip_field'];
+    drupal_goto($url);
+}

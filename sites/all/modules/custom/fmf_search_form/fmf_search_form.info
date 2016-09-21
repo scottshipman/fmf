@@ -1,0 +1,6 @@
+name = FMF Search Form
+description = Simple Zip COde Search Form
+package = FMF
+
+core = 7.x
+php = 5.2

@@ -1,0 +1,6 @@
+name = FMF Market
+description = Market Node overrides
+package = FMF
+
+core = 7.x
+php = 5.2

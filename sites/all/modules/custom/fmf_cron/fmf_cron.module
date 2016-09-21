@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * fmf_cron module.
+ */
+
+function fmf_cron_cron () {
+
+    watchdog('cron', 'Starting FMF cron tasks...');
+    _get_fmf_data_file();
+
+    watchdog('cron', 'Starting FMF feed import...');
+    _fmf_cron_fetch_MYFEED_cron('farmer_market_node_import');
+}
+
+/*
+ * helper function to get the csv of famrers markets
+ *
+ */
+
+function _get_fmf_data_file() {
+
+    $url = "https://search.ams.usda.gov/farmersmarkets/ExcelExport.aspx";
+    watchdog('cron', 'Retreiving file from '. $url);
+    $file = system_retrieve_file($url, "public://data/markets.csv", TRUE, FILE_EXISTS_REPLACE);
+    if(is_object($file)){
+        watchdog('cron', 'File successfully downloaded.');
+        return TRUE;
+    } else {
+        watchdog('cron', 'File failed to download.', NULL, WATCHDOG_ERROR);
+        return FALSE;
+    }
+}
+
+
+function _fmf_cron_fetch_MYFEED_cron($feedname){
+    if (function_exists('feeds_source')){
+            $source = feeds_source($feedname);
+            $source->import();
+        watchdog('cron', 'Feed import complete');
+    }
+}

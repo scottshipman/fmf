@@ -8510,13 +8510,20 @@ ul.dropdown-menu li {
   margin-bottom: 1em; }
 
 .hero-front img {
-  height: auto !important; }
+  height: auto !important;
+  z-index: 0; }
 
 .home-search-widget {
   position: absolute;
-  margin-top: 150px;
+  margin-top: 225px;
   text-align: center;
-  height: auto; }
+  height: auto;
+  width: auto; }
+
+#panels-ipe-paneid-10 {
+  left: 40%;
+  position: relative;
+  transform: translate(0, -50%); }
 
 .title-pane {
   text-align: center;
@@ -8539,6 +8546,9 @@ ul.dropdown-menu li {
   background-color: transparent;
   border: none; }
 
+.navbar-brand {
+  height: 80px; }
+
 #page-header {
   margin-top: 300px;
   position: absolute; }
@@ -8560,9 +8570,24 @@ ul.dropdown-menu li {
   float: left;
   padding-right: 5px; }
   .form-item-zip-field label {
-    height: 0;
-    margin: 0;
-    display: none; }
+    position: absolute;
+    top: -2em;
+    width: 100%;
+    left: -1em;
+    margin-bottom: 20px;
+    padding-left: 1em;
+    text-shadow: 2px 2px #000; }
+
+.not-front .form-item-zip-field {
+  color: #000;
+  float: left;
+  padding-right: 5px; }
+  .not-front .form-item-zip-field label {
+    position: absolute;
+    padding-bottom: 20px;
+    padding-left: 3em;
+    text-shadow: none;
+    margin-top: 1em; }
 
 #fmf-search-form-zipcode-form {
   margin: 1em; }
@@ -8574,10 +8599,19 @@ ul.dropdown-menu li {
 
 .radix-layouts-header {
   height: 300px;
-  margin-bottom: 1em; }
+  margin-bottom: 2em; }
 
 .pane-node-title {
   margin-bottom: 200px; }
+
+.social-widget {
+  top: 1em;
+  position: absolute;
+  right: 1em;
+  width: auto; }
+
+#widgets-element-socialmedia_share-default .widgets-element {
+  padding: 4px; }
 
 /* admin menu */
 body.admin-menu.adminimal-menu {

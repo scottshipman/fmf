@@ -15,18 +15,22 @@
 
 .hero-front img{
   height: auto !important;
+  z-index: 0;
 }
 
 .home-search-widget {
   position:absolute;
-  margin-top:150px;
+  margin-top:225px;
   text-align:center;
   height: auto;
+  width: auto;
+
 }
 
-.pane-vuuid-96eb69b5-3bb5-43b9-9c18-84cec350b489, #panels-ipe-paneid-14, #panels-ipe-paneid-77 {
-  //margin-left: -12.5%;
-  //width: 125%;
+#panels-ipe-paneid-10 {
+  left: 40%;
+  position: relative;
+  transform: translate(0,-50%);
 }
 
 .title-pane {
@@ -51,6 +55,10 @@
   width: 80%;
   background-color: transparent;
   border: none;
+}
+
+.navbar-brand {
+  height:80px;
 }
 
 
@@ -81,9 +89,26 @@
   float: left;
   padding-right:5px;
   label {
-    height: 0;
-    margin: 0;
-    display: none;
+    position: absolute;
+    top: -2em;
+    width: 100%;
+    left: -1em;
+    margin-bottom: 20px;
+    padding-left: 1em;
+    text-shadow: 2px 2px #000;
+  }
+}
+
+.not-front .form-item-zip-field {
+  color: #000;
+  float: left;
+  padding-right:5px;
+  label {
+    position: absolute;
+    padding-bottom: 20px;
+    padding-left: 3em;
+    text-shadow: none;
+    margin-top:1em;
   }
 }
 
@@ -100,9 +125,21 @@
 
 .radix-layouts-header {
   height: 300px;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .pane-node-title {
   margin-bottom: 200px;
+}
+
+//Social share widget
+.social-widget {
+  top: 1em;
+  position: absolute;
+  right: 1em;
+  width: auto;
+}
+
+#widgets-element-socialmedia_share-default .widgets-element {
+  padding: 4px;
 }

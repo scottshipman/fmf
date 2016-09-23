@@ -21,17 +21,20 @@
 .home-search-widget {
   position:absolute;
   margin-top:225px;
-  text-align:center;
+ // text-align:center;
   height: auto;
   width: auto;
-
-}
-
-#panels-ipe-paneid-10 { //zip widget pane?
   left: 40%;
   position: relative;
   transform: translate(0,-50%);
+
 }
+
+//#panels-ipe-paneid-10 { //zip widget pane?
+//  left: 40%;
+//  position: relative;
+//  transform: translate(0,-50%);
+//}
 
 .title-pane {
   text-align: center;
@@ -92,7 +95,7 @@
     position: absolute;
     top: -2em;
     width: 100%;
-    left: -1em;
+  //  left: -1em;
     margin-bottom: 20px;
     padding-left: 1em;
     text-shadow: 2px 2px #000;
@@ -145,7 +148,7 @@
 }
 
 .home-page-body {
-  margin-top: 25%;
+  //margin-top: 25%;
   position: absolute;
   color: #fff;
   text-shadow: 2px 2px black;

@@ -38,6 +38,9 @@ function _fmf_cron_fetch_MYFEED_cron($feedname){
     if (function_exists('feeds_source')){
             $source = feeds_source($feedname);
             $source->import();
+        $source->state(FEEDS_FETCH);
+        $source->state(FEEDS_PROCESS);
+        $source->state(FEEDS_PROCESS_CLEAR);
         watchdog('cron', 'Feed import complete');
     }
 }

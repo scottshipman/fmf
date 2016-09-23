@@ -8613,6 +8613,179 @@ ul.dropdown-menu li {
 #widgets-element-socialmedia_share-default .widgets-element {
   padding: 4px; }
 
+.home-page-body {
+  margin-top: 25%;
+  position: absolute;
+  color: #fff;
+  text-shadow: 2px 2px black;
+  font-size: 1.5em;
+  width: 100%;
+  padding: 5em;
+  margin-bottom: 5em; }
+
+.material-icons {
+  position: relative;
+  top: .25em;
+  color: green; }
+
+.market-wrapper {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 12px;
+  margin-bottom: 24px; }
+
+.market-wrapper:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
+.market-more-link {
+  position: relative; }
+
+.market-pin {
+  display: inline-block;
+  vertical-align: top; }
+
+.market-address {
+  display: inline-block; }
+
+.view-id-market_search_results.view-display-id-results_map {
+  padding: 12px;
+  width: 524px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translate(0, 25%); }
+
+.view-id-market_search_results.view-display-id-results_map:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
+ul.inline-list {
+  list-style-type: none; }
+
+li.inline-item {
+  display: inline-block;
+  padding-right: 12px;
+  margin-top: 5px; }
+
+.fa-facebook-official {
+  color: darkblue; }
+
+.fa-twitter {
+  color: deepskyblue; }
+
+.fa-youtube {
+  color: red; }
+
+.fmf-material-icons, .Coffee:before, .Baked_goods:before, .Beans:before, .Cheese:before, .Crafts:before, .Eggs:before, .Flowers:before, .Honey:before, .Jams:before, .Maple:before, .Meat:before, .Mushrooms:before, .Nursery:before, .Nuts:before, .Pet_food:before, .Poultry:before, .Vegetables:before, .Wine:before {
+  top: 5px;
+  color: green;
+  position: relative;
+  direction: ltr;
+  display: inline-block;
+  font-family: 'Material Icons';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased; }
+
+.fmf-font-awesome, .Fruits:before, .Grains:before, .Herbs:before, .Juices:before, .Plants:before, .Seafood:before, .Trees:before {
+  padding-right: 3px;
+  top: 1px;
+  color: green;
+  position: relative;
+  direction: ltr;
+  display: inline-block;
+  font-family: 'FontAwesome';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased; }
+
+.Coffee:before {
+  content: '\EB44'; }
+
+.Baked_goods:before {
+  content: '\E7E9'; }
+
+.Beans:before {
+  content: '\e3ea'; }
+
+.Cheese:before {
+  content: '\E552'; }
+
+.Crafts:before {
+  content: '\E3AE'; }
+
+.Eggs:before {
+  content: '\e52d'; }
+
+.Flowers:before {
+  content: '\E545'; }
+
+.Fruits:before {
+  content: '\f094'; }
+
+.Grains:before {
+  content: '\f18c'; }
+
+.Herbs:before {
+  content: '\f18c'; }
+
+.Honey:before {
+  content: '\e52d'; }
+
+.Jams:before {
+  content: '\e52d'; }
+
+.Juices:before {
+  content: '\f0fc'; }
+
+.Maple:before {
+  content: '\e52d'; }
+
+.Meat:before {
+  content: '\e52d'; }
+
+.Mushrooms:before {
+  content: '\e52d'; }
+
+.Nursery:before {
+  content: '\EB4C'; }
+
+.Nuts:before {
+  content: '\e52d'; }
+
+.Pet_food:before {
+  content: '\E91D'; }
+
+.Plants:before {
+  content: '\f06c'; }
+
+.Poultry:before {
+  content: '\e52d'; }
+
+.Seafood:before {
+  content: '\f0f5'; }
+
+.Trees:before {
+  content: '\f1bb'; }
+
+.Vegetables:before {
+  content: '\e52d'; }
+
+.Wine:before {
+  content: '\E540'; }
+
 /* admin menu */
 body.admin-menu.adminimal-menu {
   margin-top: 0px !important;

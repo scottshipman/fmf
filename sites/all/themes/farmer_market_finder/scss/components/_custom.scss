@@ -27,7 +27,7 @@
 
 }
 
-#panels-ipe-paneid-10 {
+#panels-ipe-paneid-10 { //zip widget pane?
   left: 40%;
   position: relative;
   transform: translate(0,-50%);
@@ -142,4 +142,294 @@
 
 #widgets-element-socialmedia_share-default .widgets-element {
   padding: 4px;
+}
+
+.home-page-body {
+  margin-top: 25%;
+  position: absolute;
+  color: #fff;
+  text-shadow: 2px 2px black;
+  font-size: 1.5em;
+  width: 100%;
+  padding: 5em;
+  margin-bottom: 5em;
+}
+
+.material-icons {
+  position: relative;
+  top: .25em;
+  color: green;
+}
+
+.market-wrapper {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  padding:12px;
+  margin-bottom: 24px;
+}
+
+.market-wrapper:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+.market-more-link {
+  position: relative;
+}
+
+.market-pin {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.market-address {
+  display: inline-block;
+}
+
+.view-id-market_search_results.view-display-id-results_map {
+  padding:12px;
+  width:524px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transform: translate(0, 25%);
+}
+.view-id-market_search_results.view-display-id-results_map:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+ul.inline-list {
+  list-style-type: none;
+}
+
+li.inline-item {
+  display:inline-block;
+  padding-right: 12px;
+  margin-top:5px;
+}
+
+.fa-facebook-official {
+  color:darkblue;
+}
+
+.fa-twitter {
+  color:deepskyblue;
+}
+
+.fa-youtube {
+  color: red;
+}
+
+// classes for google glyphs for products
+.fmf-material-icons {
+  top: 5px;
+  color: green;
+  position: relative;
+  direction: ltr;
+  display: inline-block;
+  font-family: 'Material Icons';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.fmf-font-awesome {
+  padding-right: 3px;
+  top:1px;
+  color: green;
+  position: relative;
+  direction: ltr;
+  display: inline-block;
+  font-family: 'FontAwesome';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.Coffee {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\EB44';
+  }
+}
+
+.Baked_goods {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\E7E9';
+  }
+}
+
+.Beans {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\e3ea';
+  }
+}
+
+.Cheese {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\E552';
+  }
+}
+
+.Crafts {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\E3AE';
+  }
+}
+
+.Eggs {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\e52d';
+  }
+}
+
+.Flowers {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\E545';
+  }
+}
+
+.Fruits {
+  &:before {
+    @extend .fmf-font-awesome;
+    content: '\f094';
+  }
+}
+
+.Grains {
+  &:before {
+    @extend .fmf-font-awesome;
+    content: '\f18c';
+  }
+}
+
+.Herbs {
+  &:before {
+    @extend .fmf-font-awesome;
+    content: '\f18c';
+  }
+}
+
+.Honey {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\e52d';
+  }
+}
+
+.Jams {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\e52d';
+  }
+}
+
+.Juices {
+  &:before {
+    @extend .fmf-font-awesome;
+    content: '\f0fc';
+  }
+}
+
+.Maple {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\e52d';
+  }
+}
+
+.Meat {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\e52d';
+  }
+}
+
+.Mushrooms {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\e52d';
+  }
+}
+
+.Nursery {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\EB4C';
+  }
+}
+
+.Nuts {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\e52d';
+  }
+}
+
+.Pet_food {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\E91D';
+  }
+}
+
+.Plants {
+  &:before {
+    @extend .fmf-font-awesome;
+    content: '\f06c';
+  }
+}
+
+.Poultry {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\e52d';
+  }
+}
+
+.Seafood {
+  &:before {
+    @extend .fmf-font-awesome;
+    content: '\f0f5';
+  }
+}
+
+.Trees {
+  &:before {
+    @extend .fmf-font-awesome;
+    content: '\f1bb';
+  }
+}
+
+.Vegetables {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\e52d';
+  }
+}
+
+.Wine {
+  &:before {
+    @extend .fmf-material-icons;
+    content: '\E540';
+  }
 }

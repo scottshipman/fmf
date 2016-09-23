@@ -47,6 +47,8 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
   <?php print $scripts; ?>
   <!--[if lt IE 9]>
    <script>

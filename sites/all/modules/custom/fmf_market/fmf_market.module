@@ -24,8 +24,286 @@ function fmf_market_node_view($node, $view_mode, $langcode) {
 /**
  * Implements hook_node_update().
  */
-function fmf_node_update() {
+//function fmf_node_update() {
 
+//}
+
+/**
+ * Implements hook_block_info().
+ */
+function fmf_market_block_info() {
+    $blocks['market-product-list'] = array(
+        'info' => t('Market Product List'),
+        'cache' => DRUPAL_CACHE_PER_PAGE,
+    );
+    $blocks['market-location'] = array(
+        'info' => t('Market Location'),
+        'cache' => DRUPAL_CACHE_PER_PAGE,
+    );
+    $blocks['market-payment'] = array(
+        'info' => t('Market Payment'),
+        'cache' => DRUPAL_CACHE_PER_PAGE,
+    );
+    $blocks['market-adsense-block'] = array(
+        'info' => t('Market Ad Sense Block'),
+        'cache' => DRUPAL_CACHE_PER_PAGE,
+    );
+    $blocks['market-social'] = array(
+        'info' => t('Market Social Links'),
+        'cache' => DRUPAL_CACHE_PER_PAGE,
+    );
+    $blocks['market-schedule'] = array(
+        'info' => t('Market Schedule'),
+        'cache' => DRUPAL_CACHE_PER_PAGE,
+    );
+
+    return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function fmf_market_block_view($delta)  {
+    switch ($delta) {
+        case 'market-product-list':
+            $block['subject'] = t('');
+            $block['content'] = _market_product_list_block();
+            break;
+        case 'market-location':
+            $block['subject'] = t('');
+            $block['content'] = _market_location_block();
+            break;
+        case 'market-payment':
+            $block['subject'] = t('');
+            $block['content'] = _market_payment_block();
+            break;
+        case 'market-adsense_block':
+            $block['subject'] = t('');
+            $block['content'] = _market_adsense_block();
+            break;
+        case 'market-social':
+            $block['subject'] = t('');
+            $block['content'] = _market_social();
+            break;
+        case 'market-schedule':
+            $block['subject'] = t('');
+            $block['content'] = _market_schedule();
+            break;
+    }
+
+    return $block;
 }
 
 
+
+
+/**
+ * Helper function to render block
+ */
+function _market_product_list_block() {
+    $products = array();
+    $fields = array(
+        'field_baked_goods',
+        'field_beans',
+        'field_cheese',
+        'field_coffee',
+        'field_crafts',
+        'field_eggs',
+        'field_flowers',
+        'field_fruits',
+        'field_grains',
+        'field_herbs',
+        'field_honey',
+        'field_jams',
+        'field_juices',
+        'field_maple',
+        'field_meat',
+        'field_mushrooms',
+        'field_nursery',
+        'field_nuts',
+       // 'field_organic',
+        'field_pet_food',
+        'field_plants',
+        'field_poultry',
+       // 'field_prepared',
+        'field_seafood',
+        'field_trees',
+        'field_vegetables',
+       // 'field_wild_harvested',
+        'field_wine'
+        );
+
+    $node = null;
+    if (arg(0) == "node" && arg(2) != "edit") {
+        $nid = (int) arg(1);
+        if ($nid) {
+            $node = node_load($nid);
+
+            foreach($node as $name=>$value){
+                if(in_array($name, $fields)){
+                    if(!empty($value)){
+                        $name=str_replace("_"," ",$name);
+                        $products[$name] = ucfirst(str_replace("field ","",$name));
+                    }
+                }
+            }
+        }
+    }
+    $items = array('node'=>$node, 'products'=>$products);
+    return theme('fmf_market_product_list', array('items' => $items));
+}
+
+/**
+ * Helper function to render block
+ */
+function _market_location_block() {
+    $node = null;
+    if (arg(0) == "node" && arg(2) != "edit") {
+        $nid = (int) arg(1);
+        if ($nid) {
+            $node = node_load($nid);
+
+        }
+    }
+    $items = array('node'=>$node);
+    return theme('fmf_market_location', array('items' => $items));
+}
+
+/**
+ * Helper function to render block
+ */
+function _market_payment_block() {
+    $node = null;
+    $payments=array();
+    if (arg(0) == "node" && arg(2) != "edit") {
+        $nid = (int) arg(1);
+        if ($nid) {
+            $node = node_load($nid);
+            foreach($node as $name=>$value) {
+                switch ($name) {
+                    case 'field_credit':
+                        $payments[] = "Credit";
+                        break;
+                    case 'field_wic':
+                        $payments[] = "WIC";
+                        break;
+                    case 'field_wiccash':
+                        $payments[] = "WIC cash";
+                        break;
+                    case 'field_sfnmp':
+                        $payments[] = "SFNMP";
+                        break;
+                    case 'field_snap':
+                        $payments[] = "SNAP";
+                        break;
+                }
+            }
+        }
+    }
+
+
+
+    $items = array('node'=>$node, 'payments'=>$payments);
+    return theme('fmf_market_payments', array('items' => $items));
+}
+
+/**
+ * Helper function to render block
+ */
+function _market_social() {
+    $node = null;
+    $has_links = FALSE;
+    if (arg(0) == "node" && arg(2) != "edit") {
+        $nid = (int) arg(1);
+        if ($nid) {
+            $node = node_load($nid);
+            if(!empty($node->field_facebook) ||
+               !empty($node->field_twitter) ||
+               !empty($node->field_other_media) ||
+               !empty($node->field_website) ||
+               !empty($node->field_youtube)
+            ) {
+                $has_links = TRUE;
+            }
+        }
+    }
+    $items = array('node'=>$node, 'has_links'=>$has_links);
+    return theme('fmf_market_social', array('items' => $items));
+}
+
+/**
+ * Helper function to render block
+ */
+function _market_schedule() {
+    $node = null;
+    if (arg(0) == "node" && arg(2) != "edit") {
+        $nid = (int) arg(1);
+        if ($nid) {
+            $node = node_load($nid);
+
+        }
+    }
+    $items = array('node'=>$node);
+    return theme('fmf_market_schedule', array('items' => $items));
+}
+
+/**
+ * Helper function to render block
+ */
+//function _adsense_block_block() {
+//    $node = null;
+//    if (arg(0) == "node" && arg(2) != "edit") {
+//        $nid = (int) arg(1);
+//        if ($nid) {
+//            $node = node_load($nid);
+// do more stuff
+//        }
+//    }
+//    $items = array();
+//    return theme('fmf_market_adsense_block', array('items' => $items));
+//}
+
+
+/**
+ * Implements hook_theme().
+ */
+function fmf_market_theme() {
+    $module_path = drupal_get_path('module', 'fmf_market');
+    $base = array(
+        'path' => "{$module_path}/templates",
+    );
+
+    $ret = array(
+        'fmf_market_product_list' => $base + array(
+            'template' => 'fmf_market_product_list',
+            'variables' => array('items' => NULL,
+            ),
+        ),
+        'fmf_market_location' => $base + array(
+                'template' => 'fmf_market_location',
+                'variables' => array('items' => NULL,
+                ),
+            ),
+        'fmf_market_payments' => $base + array(
+                'template' => 'fmf_market_payments',
+                'variables' => array('items' => NULL,
+                ),
+            ),
+        'fmf_market_adsense_block' => $base + array(
+                'template' => 'fmf_market_adsense_block',
+                'variables' => array('items' => NULL,
+                ),
+            ),
+        'fmf_market_social' => $base + array(
+                'template' => 'fmf_market_social',
+                'variables' => array('items' => NULL,
+                ),
+            ),
+        'fmf_market_schedule' => $base + array(
+                'template' => 'fmf_market_schedule',
+                'variables' => array('items' => NULL,
+                ),
+            ),
+    );
+    return $ret;
+}
